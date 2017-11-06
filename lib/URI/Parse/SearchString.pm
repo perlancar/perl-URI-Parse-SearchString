@@ -9,8 +9,12 @@ use warnings;
 use Exporter qw(import);
 our @EXPORT_OK = qw(parse_search_string);
 
+sub import {
+    require URI::Parse::SearchString::Plugin::Google;
+    URI::Parse::SearchString::Plugin::Google->import;
+}
+
 our %HOSTS = (
-    'google.com' => { name => 'Google', q => ['q', 'oq'] },
 );
 
 1;
